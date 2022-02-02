@@ -1,4 +1,4 @@
-package com.company;
+package com.backjoon.200;
 
 public class Main {
 
