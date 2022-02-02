@@ -17,9 +17,9 @@
 
 # 폴더 구조
 * 사이트 폴더 - 분류 폴더 - 문제 폴더 - 풀이방법 파일
-  * 예) basic1 - 200 - 10828 - SsangYoung.java
-* 사이트 폴더: 코드 플러스 강의명으로 작성
-  * 예) basic1, intermediate2
+  * 예) backjoon - 200 - 10828 - SsangYoung.java
+* 사이트 폴더: 사이트명을 영어로 작성
+  * 예) backjoon, programmers
 * 분류 폴더: 포함되어 있는 문제들을 분류하는 숫자로 작성
   * 예) 200, 1234
 * 문제 폴더: 문제 고유 번호로 작성
