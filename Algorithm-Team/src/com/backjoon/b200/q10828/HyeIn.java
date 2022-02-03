@@ -11,16 +11,16 @@ public class HyeIn {
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
-		//1. stackÀº Á¤¼ö¸¦ ÀúÀåÇÒ ¹è¿­, size´Â Á¤¼ö°¡ ÀúÀåµÈ ÇöÀç ¹è¿­ÀÇ ±æÀÌ
-		//2. ¸í·ÉÀÇ ¼ö N ÀÔ·Â ¹ŞÀ½
-		//3. ±æÀÌ°¡ N ¹è¿­ »ı¼º
-		//4. N¸¸Å­ for¹®
-		//		- push: stack[size]¿¡ ÀÔ·Â¹ŞÀº ¼ıÀÚ ÀúÀå, size++
-		//		- pop: size°¡ 0ÀÌ¸é -1 ¹İÈ¯, ¾Æ´Ï¸é stack[size-1] ¹İÈ¯, size--
-		//		- size: size ¹İÈ¯
-		//		- empty: size°¡ 0ÀÌ¸é 1¹İÈ¯, ¾Æ´Ï¸é 0¹İÈ¯
-		//		- top: size°¡ 0ÀÌ¸é -1 ¹İÈ¯, ¾Æ´Ï¸é stack[size-1] ¹İÈ¯
-		//5. ¸í·É¾î°¡ push°¡ ¾Æ´Ò¶§¸¸ print
+		//1. stackì€ ì •ìˆ˜ë¥¼ ì €ì¥í•  ë°°ì—´, sizeëŠ” ì •ìˆ˜ê°€ ì €ì¥ëœ í˜„ì¬ ë°°ì—´ì˜ ê¸¸ì´
+		//2. ëª…ë ¹ì˜ ìˆ˜ N ì…ë ¥ ë°›ìŒ
+		//3. ê¸¸ì´ê°€ N ë°°ì—´ ìƒì„±
+		//4. Në§Œí¼ forë¬¸
+		//		- push: stack[size]ì— ì…ë ¥ë°›ì€ ìˆ«ì ì €ì¥, size++
+		//		- pop: sizeê°€ 0ì´ë©´ -1 ë°˜í™˜, ì•„ë‹ˆë©´ stack[size-1] ë°˜í™˜, size--
+		//		- size: size ë°˜í™˜
+		//		- empty: sizeê°€ 0ì´ë©´ 1ë°˜í™˜, ì•„ë‹ˆë©´ 0ë°˜í™˜
+		//		- top: sizeê°€ 0ì´ë©´ -1 ë°˜í™˜, ì•„ë‹ˆë©´ stack[size-1] ë°˜í™˜
+		//5. ëª…ë ¹ì–´ê°€ pushê°€ ì•„ë‹ë•Œë§Œ print
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
