@@ -37,6 +37,7 @@ public class YouMe {
 	public static void main(String[] args) {
 		
 		int n = scan.nextInt();
+		scan.next();
 		
 		for(int i=0; i<n; i++) {
 			String input = scan.nextLine();
@@ -52,7 +53,11 @@ public class YouMe {
 			stack.push(temp[1]);
 			break;
 		case "pop":
-			System.out.println(stack.pop());
+			if(stack.empty()) {
+				System.out.println(-1);
+			} else {
+				System.out.println(stack.pop());
+			}
 			break;
 		case "size":
 			System.out.println(stack.size());
@@ -65,7 +70,11 @@ public class YouMe {
 			}
 			break;
 		case "top":
-			System.out.println(stack.peek());
+			if(stack.empty()) {
+				System.out.println(-1);
+			} else {
+				System.out.println(stack.peek());
+			}
 			break;
 		}
 	}
