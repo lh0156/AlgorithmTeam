@@ -6,7 +6,8 @@ import java.util.Stack;
 
 public class YouMe {
 	/*
-		정수를 저장하는 스택을 구현한 다음, 입력으로 주어지는 명령을 처리하는 프로그램 작성
+		정수를 저장하는 스택을 구현한 다음, 
+		입력으로 주어지는 명령을 처리하는 프로그램 작성
 		
 		설계>
 		1. 필드에 Stack 객체 생성
@@ -22,9 +23,9 @@ public class YouMe {
 					> case pop; 마지막 값을 꺼내 출력
 					> case size; 요소 개수 출력
 					> case empty
-					> if stack이 비었는지? 
-							> 1 출력
-							> 비었으면 0 출력
+						> if stack이 비었는지? 
+								> 1 출력
+								> 비었으면 0 출력
 					> case top; 마지막 값을 그냥 출력
 	 */
 	private static Stack<String> stack;
@@ -40,45 +41,45 @@ public class YouMe {
 		
 		for(int i=0; i<n; i++) {
 			String input = reader.readLine();
-			String[] temp = input.split(" ");
+			String[] command = input.split(" ");
 			
-			getResult(temp);
+			getResult(command);
 		}
 	}
 
-	private static void getResult(String[] temp) {
-		switch(temp[0]) {
-		case "push":
-			stack.push(temp[1]);
-			break;
-			
-		case "pop":
-			if(stack.empty()) {
-				System.out.println(-1);
-			} else {
-				System.out.println(stack.pop());
-			}
-			break;
-			
-		case "size":
-			System.out.println(stack.size());
-			break;
-			
-		case "empty":
-			if(stack.empty()) {
-				System.out.println(1);
-			} else {
-				System.out.println(0);
-			}
-			break;
-			
-		case "top":
-			if(stack.empty()) {
-				System.out.println(-1);
-			} else {
-				System.out.println(stack.peek());
-			}
-			break;
+	private static void getResult(String[] command) {
+		switch (command[0]) {
+			case "push":
+				stack.push(command[1]);
+				break;
+				
+			case "size":
+				System.out.println(stack.size());
+				break;
+				
+			case "pop":
+				if(stack.empty()) {
+					System.out.println(-1);
+				} else {
+					System.out.println(stack.pop());
+				}
+				break;
+				
+			case "empty":
+				if(stack.empty()) {
+					System.out.println(1);
+				} else {
+					System.out.println(0);
+				}
+				break;
+				
+			case "top":
+				if(stack.empty()) {
+					System.out.println(-1);
+				} else {
+					System.out.println(stack.peek());
+				}
+				break;
 		}
 	}
 }
