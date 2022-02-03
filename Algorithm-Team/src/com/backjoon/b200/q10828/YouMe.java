@@ -1,6 +1,7 @@
 package com.backjoon.b200.q10828;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Stack;
 
 public class YouMe {
@@ -27,20 +28,18 @@ public class YouMe {
 					> case top; 마지막 값을 그냥 출력
 	 */
 	private static Stack<String> stack;
-	private static Scanner scan;
+	private static BufferedReader reader;
 	
 	static {
 		stack = new Stack<String>();
-		scan = new Scanner(System.in);
+		reader = new BufferedReader(new InputStreamReader(System.in));
 	}
 	
-	public static void main(String[] args) {
-		
-		int n = scan.nextInt();
-		scan.next();
+	public static void main(String[] args) throws Exception {
+		int n = Integer.parseInt(reader.readLine());
 		
 		for(int i=0; i<n; i++) {
-			String input = scan.nextLine();
+			String input = reader.readLine();
 			String[] temp = input.split(" ");
 			
 			getResult(temp);
@@ -52,6 +51,7 @@ public class YouMe {
 		case "push":
 			stack.push(temp[1]);
 			break;
+			
 		case "pop":
 			if(stack.empty()) {
 				System.out.println(-1);
@@ -59,9 +59,11 @@ public class YouMe {
 				System.out.println(stack.pop());
 			}
 			break;
+			
 		case "size":
 			System.out.println(stack.size());
 			break;
+			
 		case "empty":
 			if(stack.empty()) {
 				System.out.println(1);
@@ -69,6 +71,7 @@ public class YouMe {
 				System.out.println(0);
 			}
 			break;
+			
 		case "top":
 			if(stack.empty()) {
 				System.out.println(-1);
