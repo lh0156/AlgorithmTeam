@@ -33,20 +33,25 @@ public class YouMe {
 		
 		for(int i=0; i<num; i++) {
 			String input = reader.readLine();
-			reverse(input);
+			setSentence(input);
 		}
 	}
 
-	private static void reverse(String input) {
+	private static void setSentence(String input) {
 		Stack<Character> stack = new Stack<>();
-		
+
 		for (int i=0; i<input.length(); i++){
 			stack.push(input.charAt(i));
 		}
-		
+		reverse(stack);
+	}
+
+	private static void reverse(Stack<Character> stack) {
+		StringBuilder builder = new StringBuilder();
 		while(!stack.isEmpty()) {
-			System.out.print(stack.pop());
+			builder.append(stack.pop());
 		}
-		System.out.println();
+		
+		System.out.println(builder);
 	}
 }
