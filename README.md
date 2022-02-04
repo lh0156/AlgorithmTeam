@@ -8,7 +8,7 @@
  우리의 실리콘밸리급 알고리즘 문제풀이를 감상하세요
 <br/><br/>
 # 프로그래밍 언어
-* Java, JavaScript
+* Java, JavaScript, C언어
 <br/>
 
 # 알고리즘 사이트
