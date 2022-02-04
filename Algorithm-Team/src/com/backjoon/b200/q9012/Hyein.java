@@ -17,7 +17,8 @@ public class Hyein {
 		Scanner input = new Scanner(System.in);
 		
 		//참나 nextInt 썼다고 런타임 에러 남; 주의하자!
-		int T = Integer.parseInt(input.nextLine());
+		int T = input.nextInt();
+		input.nextLine();
 		
 		for(int i=0; i < T; i++) {
 			
