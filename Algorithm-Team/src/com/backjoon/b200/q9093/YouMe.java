@@ -23,13 +23,9 @@ public class YouMe {
 				> print로 stack.pop 출력  
 	 */
 	private static BufferedReader reader;
-	private static StringBuilder builder;
-	private static Stack<Character> stack;
 	
 	static {
 		reader = new BufferedReader(new InputStreamReader(System.in));
-		builder = new StringBuilder();
-		stack = new Stack<>();
 	}
 	
 	public static void main(String[] args) throws Exception {
@@ -42,14 +38,15 @@ public class YouMe {
 	}
 
 	private static void reverse(String input) {
+		Stack<Character> stack = new Stack<>();
+		
 		for (int i=0; i<input.length(); i++){
 			stack.push(input.charAt(i));
 		}
 		
-		while(!stack.empty()) {
-			builder.append(stack.pop());
+		while(!stack.isEmpty()) {
+			System.out.print(stack.pop());
 		}
-		
-		System.out.print(builder);
+		System.out.println();
 	}
 }
