@@ -25,6 +25,7 @@ public class YouMe {
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		
 		int num = Integer.parseInt(reader.readLine());
 		
 		for(int i=0; i<num; i++) {
@@ -37,18 +38,26 @@ public class YouMe {
 		Stack<Character> stack = new Stack<>();
 
 		for (int i=0; i<input.length(); i++){
-			stack.push(input.charAt(i));
+			if(input.charAt(i) != ' ') {
+				stack.push(input.charAt(i));
+			}
+			
+			if(input.charAt(i) == ' ' 
+					|| i == input.length() - 1) {
+				reverse(stack);
+			}
 		}
-		reverse(stack);
+		
+		System.out.println();
 	}
 
 	private static void reverse(Stack<Character> stack) {
 		StringBuilder builder = new StringBuilder();
-		int length = stack.size();
 		
-		for(int i=0; i<length; i++) {
+		while(!stack.empty()) {
 			builder.append(stack.pop());
 		}
-		System.out.println(builder);
+		
+		System.out.print(builder + " ");
 	}
 }
