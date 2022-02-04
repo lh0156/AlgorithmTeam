@@ -22,13 +22,9 @@ public class YouMe {
 			> while문 stack이 안 비어있는지?
 				> print로 stack.pop 출력  
 	 */
-	private static BufferedReader reader;
-	
-	static {
-		reader = new BufferedReader(new InputStreamReader(System.in));
-	}
 	
 	public static void main(String[] args) throws Exception {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int num = Integer.parseInt(reader.readLine());
 		
 		for(int i=0; i<num; i++) {
@@ -48,10 +44,11 @@ public class YouMe {
 
 	private static void reverse(Stack<Character> stack) {
 		StringBuilder builder = new StringBuilder();
-		while(!stack.isEmpty()) {
+		int length = stack.size();
+		
+		for(int i=0; i<length; i++) {
 			builder.append(stack.pop());
 		}
-		
 		System.out.println(builder);
 	}
 }
