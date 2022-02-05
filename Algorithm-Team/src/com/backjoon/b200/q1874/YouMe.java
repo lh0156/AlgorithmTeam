@@ -11,6 +11,7 @@ public class YouMe {
 		1. BufferedReader 선언
 		2. 
 		
+		
 	 */
 	
 
