@@ -29,21 +29,13 @@ public class YouMe {
 				> true를 반환
 	 */
 	
-	private static boolean result;
-	
 	public static void main(String[] args) throws Exception {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int testCase = Integer.parseInt(reader.readLine());
 		
 		for(int i=0; i<testCase; i++) {
 			String input = reader.readLine();
-			result = isVps(input);
-			
-			if(result) {
-				System.out.println("YES");
-			} else {
-				System.out.println("NO");
-			}
+			System.out.println(isVps(input) ? "YES" : "NO");
 		}
 	}
 
@@ -64,10 +56,6 @@ public class YouMe {
 			}
 		}
 		
-		if(stack.empty()) {
-			return true;
-		} else {
-			return false;
-		}
+		return stack.empty() ? true : false;
 	}
 }
