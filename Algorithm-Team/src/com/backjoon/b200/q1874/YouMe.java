@@ -50,15 +50,15 @@ public class YouMe {
 			getTern(tern);
 		}
 		
-		System.out.println(builder);
+		System.out.print(builder);
 	}
 
 	private static void getTern(int tern) {
-		System.out.println(stack.empty() ? "empty" : stack.peek()+","+tern);
+//		System.out.println(stack.empty() ? "empty" : stack.peek()+","+tern);
 		if(tern > num) {
 			for(int i=num+1; i<=tern; i++) {
 				stack.push(i);
-				builder.append("+\r\n");
+				builder.append("+\n");
 			}
 			num = tern;
 			
@@ -68,6 +68,6 @@ public class YouMe {
 		}
 		
 		stack.pop();
-		builder.append("-\r\n");
+		builder.append("-\n");
 	}
 }
