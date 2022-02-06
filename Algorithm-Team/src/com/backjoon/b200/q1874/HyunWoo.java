@@ -47,7 +47,7 @@ public class HyunWoo {
 					return;
 				}
 			} else {
-				for (int j = preNum; j <= count; j++) {
+				for (int j = i+1; j <= count; j++) {
 					try {
 						if(!stack.contains(j) && preNum<j) {// 입력받았던 숫자들 중 최대값보다 크고 , stack에 없어야 됨.
 							stack.push(j);
