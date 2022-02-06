@@ -23,13 +23,16 @@ public class HyunWoo {
 		StringBuilder result = new StringBuilder();
 		int count = 0;
 		int num = 0;
-		int preNum = 0;
+		int addNum = 1;
 
 		try {
 			count = Integer.parseInt(scan.readLine());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+		stack.push(addNum++);
+		result.append("+").append("\n"); // 초기값
 
 		for (int i = 0; i < count; i++) {
 
@@ -38,35 +41,38 @@ public class HyunWoo {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			if (num <= i) {
-				if (stack.peek() == num) { // stack 최 상단과 동일하다면 문자열 입력
+			
+			try {
+				if (stack.peek() == num) {// 상단에 값과 입력받은 값과 동일한 값이면 pop 이후 continue
 					stack.pop();
 					result.append("-").append("\n");
+					continue;
+				} else if (stack.peek() < num) {
+					for (int j = addNum; j <= num; j++) {
+						stack.push(addNum++);
+						result.append("+").append("\n");
+						if (stack.peek() == num) {// 상단에 입력받은 값과 동일한 값이 들어가면 pop
+							stack.pop();
+							result.append("-").append("\n");
+							break;
+						}
+					}
 				} else {
-					System.out.println("NO");// 조건 불만족시 return
+					System.out.println("NO");
 					return;
 				}
-			} else {
-				for (int j = i+1; j <= count; j++) {
-					try {
-						if(!stack.contains(j) && preNum<j) {// 입력받았던 숫자들 중 최대값보다 크고 , stack에 없어야 됨.
-							stack.push(j);
-							result.append("+").append("\n");
-						}
-					}catch(java.util.EmptyStackException e) {// 처음 stack이 비어있을 경우
-						stack.push(1);
-						result.append("+").append("\n");
-					}
-					if (stack.peek() == num) { // stack 최 상단과 동일하다면 문자열 입력 이후 break;
+			}catch(java.util.EmptyStackException e) {// peek Null 예외처리 값 넣음
+				for (int j = addNum; j <= num; j++) {
+					stack.push(addNum++);
+					result.append("+").append("\n");
+					if (stack.peek() == num) {
 						stack.pop();
 						result.append("-").append("\n");
 						break;
-					} else {
-						continue;
 					}
 				}
-				preNum = preNum>num?preNum : num;// 입력받은 숫자 최대값 누적
 			}
+
 		}
 		System.out.println(result.toString());
 	}
