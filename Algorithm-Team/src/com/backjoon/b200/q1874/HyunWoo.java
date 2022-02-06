@@ -57,16 +57,16 @@ public class HyunWoo {
 						stack.push(1);
 						result.append("+").append("\n");
 					}
+					if (stack.peek() == num) { // stack 최 상단과 동일하다면 문자열 입력 이후 break;
+						stack.pop();
+						result.append("-").append("\n");
+						break;
+					} else {
+						continue;
+					}
 				}
-				if (stack.peek() == num) { // stack 최 상단과 동일하다면 문자열 입력 이후 break;
-					stack.pop();
-					result.append("-").append("\n");
-					break;
-				} else {
-					continue;
-				}
+				preNum = preNum>num?preNum : num;// 입력받은 숫자 최대값 누적
 			}
-			preNum = preNum>num?preNum : num;// 입력받은 숫자 최대값 누적
 		}
 		System.out.println(result.toString());
 	}
