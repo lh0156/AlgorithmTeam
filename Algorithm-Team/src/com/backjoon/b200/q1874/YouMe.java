@@ -54,16 +54,17 @@ public class YouMe {
 	}
 
 	private static void getTern(int tern) {
+		System.out.println(stack.empty() ? "empty" : stack.peek()+","+tern);
 		if(tern > num) {
 			for(int i=num+1; i<=tern; i++) {
-				stack.add(i);
+				stack.push(i);
 				builder.append("+\r\n");
 			}
 			num = tern;
 			
-		} else if(stack.peek() != num) {
-			System.exit(0);
+		} else if(stack.peek() != tern) {
 			System.out.println("NO");
+			System.exit(0);
 		}
 		
 		stack.pop();
