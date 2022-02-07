@@ -52,31 +52,35 @@ public class YouMe2 {
 			String[] command = reader.readLine().split(" ");
 			edit(command);
 		}
-		
 		getResult();
-		
 	}
 
 	private static void getResult() {
-		for(char left : leftStack) {
-			System.out.print(left);
+		while(!leftStack.empty()) {
+			rightStack.push(leftStack.pop());
 		}
 		
-		for(char right : rightStack) {
-			System.out.print(right);
+		while(!rightStack.empty()) {
+			System.out.print(rightStack.pop());
 		}
 	}
 
 	private static void edit(String[] command) {
 		switch(command[0]) {
 			case "L":
-				rightStack.push(leftStack.pop());
+				if(!leftStack.empty()) {
+					rightStack.push(leftStack.pop());
+				}
 				break;
 			case "D":
-				leftStack.push(rightStack.pop());
+				if(!rightStack.empty()) {
+					leftStack.push(rightStack.pop());
+				}
 				break;
 			case "B":
-				leftStack.pop();
+				if(!leftStack.empty()) {
+					leftStack.pop();
+				}
 				break;
 			default :
 				leftStack.push(command[1].charAt(0));
