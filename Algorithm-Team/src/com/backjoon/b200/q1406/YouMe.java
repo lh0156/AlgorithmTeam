@@ -46,25 +46,26 @@ public class YouMe {
 	private static BufferedReader reader;
 	private static ArrayList<String> list;
 	private static String content;
+	private static int num;
 	private static int index;
 	
 	static {	
 		reader = new BufferedReader(new InputStreamReader(System.in));
-		list = new ArrayList<String>(600000);
 	}
 	
 	public static void main(String[] args) throws Exception {
 		content = reader.readLine();
+		num = Integer.parseInt(reader.readLine());
 		index = content.length();
+		
 		setList();
 		
-		int num = Integer.parseInt(reader.readLine());
 		for(int i=0; i<num; i++) {
 			String[] command = reader.readLine().split(" ");
 			edit(command);
-			getResult();
-			System.out.println("," + index);
+//			System.out.println("," + index);
 		}
+		getResult();
 	}
 
 	private static void getResult() {
@@ -81,7 +82,7 @@ public class YouMe {
 				}
 				break;
 			case "D":
-				if(index <= content.length() + 1) {
+				if(index < content.length()) {
 					index ++;
 				}
 				break;
@@ -98,6 +99,7 @@ public class YouMe {
 	}
 
 	private static void setList() {
+		list = new ArrayList<String>(content.length() + num);
 		for(int i=0; i<content.length(); i++) {
 			list.add(i, content.charAt(i) + "");
 		}
