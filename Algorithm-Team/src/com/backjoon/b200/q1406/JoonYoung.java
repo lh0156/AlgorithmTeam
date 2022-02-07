@@ -9,53 +9,53 @@ public class joonyoung1046new2 {
 
 	public static void main(String[] args) throws Exception {
 
-		//ÀÏ´Ü ÀÔ·Â¹Ş¾Æ
+		//ì¼ë‹¨ ì…ë ¥ë°›ì•„
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		//¸®½ºÆ®·Î ¸¸µé¾î¾ß Áß°£¿¡ ³ÖÀ»¼ö ÀÖ°ÚÁö?
+		//ë¦¬ìŠ¤íŠ¸ë¡œ ë§Œë“¤ì–´ì•¼ ì¤‘ê°„ì— ë„£ì„ìˆ˜ ìˆê² ì§€?
 		ArrayList<Character> list = new ArrayList<Character>();
 		
-		//ÀÔ·Â¹Ş¾Æº¸ÀÚ
+		//ì…ë ¥ë°›ì•„ë³´ì
 		String input = br.readLine();
 		
-		//index·Î Ä¿¼­¸¦ Á¶ÀıÇØº¼±î »ı°¢ÇØ¼­ ¸¸µé¾îº¸¾Ò´Ù
+		//indexë¡œ ì»¤ì„œë¥¼ ì¡°ì ˆí•´ë³¼ê¹Œ ìƒê°í•´ì„œ ë§Œë“¤ì–´ë³´ì•˜ë‹¤
 		int index = input.length();
 		
-		//index°¡ ÀÚ²Ù ¹Ù²î´Ï±î »õ·Î º¯¼ö¸¦ ÆÄ¼­ ¸Ç ¿À¸¥ÂÊ ³¡À» ¼³Á¤ÇØÁàºÃ´Ù
+		//indexê°€ ìê¾¸ ë°”ë€Œë‹ˆê¹Œ ìƒˆë¡œ ë³€ìˆ˜ë¥¼ íŒŒì„œ ë§¨ ì˜¤ë¥¸ìª½ ëì„ ì„¤ì •í•´ì¤˜ë´¤ë‹¤
 		int right = input.length();
 		
-		//¸®½ºÆ®¿¡ ¹®ÀÚ¸¦ ´ã¾Æº¸ÀÚ
+		//ë¦¬ìŠ¤íŠ¸ì— ë¬¸ìë¥¼ ë‹´ì•„ë³´ì
         for (int i = 0; i < index; i++) {
             list.add(input.charAt(i));
         }
         
-        //»±»±ÀÌ µ¹·Á¼­ Ã£¾Æº¸ÀÚ
+        //ëº‘ëº‘ì´ ëŒë ¤ì„œ ì°¾ì•„ë³´ì
         for (int i=0; i<index; i++) {
         	
-        	//¸í·ÉÀ» ÀÔ·Â¹Ş¾Æº¸ÀÚ
+        	//ëª…ë ¹ì„ ì…ë ¥ë°›ì•„ë³´ì
         	String com = br.readLine();
         	
-        	//LÀÌ¸é index°¡ ÇÏ³ª ¿ŞÂÊÀ¸·Î °¡¾ßÇÑ´Ù. ÀÌ°Ô Ä¿¼­ÀÎµ¥ ÀÌ¸§µµ Ä¿¼­·Î ÇÒ°É
+        	//Lì´ë©´ indexê°€ í•˜ë‚˜ ì™¼ìª½ìœ¼ë¡œ ê°€ì•¼í•œë‹¤. ì´ê²Œ ì»¤ì„œì¸ë° ì´ë¦„ë„ ì»¤ì„œë¡œ í• ê±¸
         	if (com.equals("L")) {
         		if (index > 0) {
         			index --;
         		}
-        	//D¸é index°¡ ¿À¸¥ÂÊÀ¸·Î
+        	//Dë©´ indexê°€ ì˜¤ë¥¸ìª½ìœ¼ë¡œ
         	} else if (com.equals("D")) {
         		if (index < right) {
         			index ++;
         		}
-        	//B¸é index-1ÀÇ À§Ä¡¿¡ ÀÖ´Â ¸®½ºÆ®¸¦ Áö¿ì°í Ä¿¼­µµ ÁÙ¿©ÁØ´Ù
+        	//Bë©´ index-1ì˜ ìœ„ì¹˜ì— ìˆëŠ” ë¦¬ìŠ¤íŠ¸ë¥¼ ì§€ìš°ê³  ì»¤ì„œë„ ì¤„ì—¬ì¤€ë‹¤
         	} else if (com.equals("B")) {
         		if (index > 0) {
         			list.remove(index-1);
         			
         			index --;
         		}
-        	//P·Î ½ÃÀÛÇÏ¸é ¹®ÀÚ¸¦ indexÀ§Ä¡¿¡ ¹®ÀÚ¸¦ Ãß°¡ÇØ¾ß ÇÑ´Ù.
+        	//Pë¡œ ì‹œì‘í•˜ë©´ ë¬¸ìë¥¼ indexìœ„ì¹˜ì— ë¬¸ìë¥¼ ì¶”ê°€í•´ì•¼ í•œë‹¤.
         	} else if (com.startsWith("P")) {
 
-        		list.add(index, com.substring(2, com.length()).charAt(index)); //¾î¶»°ÔÇØ¾éÀÚ¤Ó¤±¤¤¾Æ·³¤¸µğ¤ÁŸ¤»¤¤ÀÌ¤¿¤«Ã³¤Ó
+        		list.add(index, com.substring(2, com.length()).charAt(index)); //ì–´ë–»ê²Œí•´ì–—ìã…£ã…ã„´ì•„ëŸ¼ã…ˆë””ã…‘ÂŸã…‹ã„´ì´ã…ã„»ì²˜ã…£
         		index ++;
         		
         	}
