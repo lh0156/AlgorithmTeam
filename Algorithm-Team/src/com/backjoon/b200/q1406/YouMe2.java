@@ -1,7 +1,10 @@
 package com.backjoon.b200.q1406;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Stack;
 
 public class YouMe2 {
@@ -55,14 +58,18 @@ public class YouMe2 {
 		getResult();
 	}
 
-	private static void getResult() {
+	private static void getResult() throws Exception {
+		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
+		
 		while(!leftStack.empty()) {
 			rightStack.push(leftStack.pop());
 		}
 		
 		while(!rightStack.empty()) {
-			System.out.print(rightStack.pop());
+			writer.write(rightStack.pop());
 		}
+		writer.flush();
+		writer.close();
 	}
 
 	private static void edit(String[] command) {
