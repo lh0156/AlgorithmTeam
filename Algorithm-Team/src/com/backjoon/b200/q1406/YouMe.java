@@ -87,7 +87,8 @@ public class YouMe {
 				break;
 			case "B":
 				if(index > 0) {
-					list.remove(index-1);
+					list.remove(index - 1);
+					index--;
 				}
 				break;
 			case "P":
