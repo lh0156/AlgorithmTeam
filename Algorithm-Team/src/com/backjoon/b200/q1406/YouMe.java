@@ -1,7 +1,9 @@
 package com.backjoon.b200.q1406;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 public class YouMe {
@@ -44,6 +46,7 @@ public class YouMe {
 	 */
 	
 	private static BufferedReader reader;
+	private static BufferedWriter writer;
 	private static ArrayList<String> list;
 	private static String content;
 	private static int num;
@@ -51,26 +54,26 @@ public class YouMe {
 	
 	static {	
 		reader = new BufferedReader(new InputStreamReader(System.in));
+		writer = new BufferedWriter(new OutputStreamWriter(System.out));
 	}
 	
 	public static void main(String[] args) throws Exception {
 		content = reader.readLine();
 		num = Integer.parseInt(reader.readLine());
-		index = content.length();
 		
+		index = content.length();
 		setList();
 		
 		for(int i=0; i<num; i++) {
 			String[] command = reader.readLine().split(" ");
 			edit(command);
-//			System.out.println("," + index);
 		}
 		getResult();
 	}
 
-	private static void getResult() {
+	private static void getResult() throws Exception {
 		for(int i=0; i<list.size(); i++) {
-			System.out.print(list.get(i));
+			writer.write(list.get(i));
 		}
 	}
 
@@ -92,16 +95,17 @@ public class YouMe {
 					index--;
 				}
 				break;
-			case "P":
+			default :
 				list.add(index, command[1]);
 				index++;
+				break;
 		}
 	}
 
 	private static void setList() {
-		list = new ArrayList<String>(content.length() + num);
+		list = new ArrayList<String>();
 		for(int i=0; i<content.length(); i++) {
-			list.add(i, content.charAt(i) + "");
+			list.add(content.charAt(i) + "");
 		}
 	}
 }
