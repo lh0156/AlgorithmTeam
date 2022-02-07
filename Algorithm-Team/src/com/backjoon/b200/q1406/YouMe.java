@@ -63,9 +63,10 @@ public class YouMe {
 		for(int i=0; i<num; i++) {
 			String[] command = reader.readLine().split(" ");
 			edit(command);
+			getResult();
+			System.out.println("," + index);
 		}
 		
-		getResult();
 	}
 
 	private static void getResult() {
@@ -93,6 +94,7 @@ public class YouMe {
 				break;
 			case "P":
 				list.add(index, command[1]);
+				index++;
 		}
 	}
 
