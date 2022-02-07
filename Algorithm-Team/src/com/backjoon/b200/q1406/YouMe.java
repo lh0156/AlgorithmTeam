@@ -1,7 +1,6 @@
 package com.backjoon.b200.q1406;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -66,7 +65,6 @@ public class YouMe {
 			getResult();
 			System.out.println("," + index);
 		}
-		
 	}
 
 	private static void getResult() {
@@ -89,7 +87,7 @@ public class YouMe {
 				break;
 			case "B":
 				if(index > 0) {
-					list.remove(index);
+					list.remove(index-1);
 				}
 				break;
 			case "P":
@@ -103,5 +101,4 @@ public class YouMe {
 			list.add(i, content.charAt(i) + "");
 		}
 	}
-
 }
