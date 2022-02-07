@@ -2,14 +2,13 @@ package com.backjoon.b200.q1406;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Stack;
 
 public class Hyein {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -39,7 +38,7 @@ public class Hyein {
 				
 			case 'D' :
 				if(!rStack.empty()) {
-					rStack.push(lStack.pop());
+					lStack.push(rStack.pop());
 				}
 				break;
 				
@@ -63,7 +62,7 @@ public class Hyein {
 			rStack.push(lStack.pop());
 		}
 		
-		while(!lStack.empty()) {
+		while(!rStack.empty()) {
 			writer.write(rStack.pop());
 		}
 		writer.flush();
