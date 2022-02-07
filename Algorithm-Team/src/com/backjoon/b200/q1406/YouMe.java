@@ -16,7 +16,6 @@ public class YouMe {
 		- 커서는 문장의 맨 뒤에 위치함.
 		
 		설계>
-		1. BufferedReader, ArrayList, index, content 필드에 선언함.
 		2. 문자열과 갯수를 입력 받아 변수에 초기화함.
 		4. 갯수 + 1을 index에 초기화함.
 		5. 문자열을 매개로 setList 호출
@@ -46,7 +45,6 @@ public class YouMe {
 	 */
 	
 	private static BufferedReader reader;
-	private static BufferedWriter writer;
 	private static ArrayList<String> list;
 	private static String content;
 	private static int num;
@@ -54,7 +52,7 @@ public class YouMe {
 	
 	static {	
 		reader = new BufferedReader(new InputStreamReader(System.in));
-		writer = new BufferedWriter(new OutputStreamWriter(System.out));
+		list = new ArrayList<String>();
 	}
 	
 	public static void main(String[] args) throws Exception {
@@ -73,7 +71,7 @@ public class YouMe {
 
 	private static void getResult() throws Exception {
 		for(int i=0; i<list.size(); i++) {
-			writer.write(list.get(i));
+			System.out.print(list.get(i));
 		}
 	}
 
@@ -103,7 +101,6 @@ public class YouMe {
 	}
 
 	private static void setList() {
-		list = new ArrayList<String>();
 		for(int i=0; i<content.length(); i++) {
 			list.add(content.charAt(i) + "");
 		}
