@@ -1,7 +1,6 @@
 package com.backjoon.b200.q10845;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -69,6 +68,7 @@ public class YouMe {
 				} else {
 					System.out.println("0");
 				}
+				break;
 				
 			case "push" :
 				list.add(command[1]);
@@ -89,7 +89,7 @@ public class YouMe {
 			
 			case "back" :
 				if(!isEmpty()) {
-					System.out.println(list.get(list.size()));
+					System.out.println(list.get(list.size()-1));
 				}
 		}
 	}
