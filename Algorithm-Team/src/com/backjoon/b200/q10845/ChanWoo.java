@@ -21,16 +21,12 @@ public class ChanWoo {
 			
 			if(str[0].equals("push")) {
 				queue.add(str[1]);
-				System.out.println(queue);
-				
 			}else if(str[0].equals("pop")){
 				if(queue.isEmpty() == true) {
 					result.add(-1+"");
 				}else {
-					System.out.println("삭제 : "+queue.get(0));
 					result.add(queue.get(0));
 					queue.remove(0);
-					System.out.println(queue);
 				}
 			}else if(str[0].equals("size")) {
 				result.add(queue.size()+"");
@@ -44,18 +40,13 @@ public class ChanWoo {
 				if(queue.isEmpty() == true) {
 					result.add(-1+"");
 				}else {
-					System.out.println("프론트 : "+queue.get(0));
 					result.add(queue.get(0));
-					System.out.println(queue);
 				}
-				
 			}else if(str[0].equals("back")) {
 				if(queue.isEmpty() == true) {
 					result.add(-1+"");
 				}else {
-					System.out.println("백 : "+queue.get(queue.size()-1));
 					result.add(queue.get(queue.size()-1));
-					System.out.println(queue);
 				}
 			}
 
@@ -63,60 +54,7 @@ public class ChanWoo {
 		
 		for(int i = 0; i < result.size(); i++) {
 			System.out.println(result.get(i));
-		}
-		
-		
+		}	
 	}
-	
 }
 	
-
-
-//String question = rd.readLine().trim();
-//String[] str = question.split(" ");
-//
-//if(str[0].equals("push")) {
-//	queue.add(str[1]);
-//	System.out.println(queue);
-//	
-//}else if(str[0].equals("pop")){
-//	if(queue.isEmpty() == true) {
-//		result.add(-1+"");
-//	}else {
-//		System.out.println("삭제 : "+queue.get(0));
-//		result.add(queue.get(0));
-//		queue.remove(0);
-//		System.out.println(queue);
-//	}
-//}else if(str[0].equals("size")) {
-//	result.add(queue.size()+"");
-//}else if(str[0].equals("empty")) {
-//	if(queue.isEmpty() == true) {
-//		result.add(1+"");
-//	}else{
-//		result.add(0+"");
-//	}
-//}else if(str[0].equals("front")) {
-//	if(queue.isEmpty() == true) {
-//		result.add(-1+"");
-//	}else {
-//		System.out.println("프론트 : "+queue.get(0));
-//		result.add(queue.get(0));
-//		System.out.println(queue);
-//	}
-//	
-//}else if(str[0].equals("back")) {
-//	if(queue.isEmpty() == true) {
-//		result.add(-1+"");
-//	}else {
-//		System.out.println("백 : "+queue.get(queue.size()-1));
-//		result.add(queue.get(queue.size()-1));
-//		System.out.println(queue);
-//	}
-//}
-//
-//}
-//
-//for(int i = 0; i < result.size(); i++) {
-//System.out.println(result.get(i));
-//}
