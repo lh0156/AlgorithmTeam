@@ -26,16 +26,21 @@ public class Yunseop {
 
         //4. queue 객체의 기능을 할 ArayListd를 선언한다.
 
-        //5. for 문을 spin만큼 돌면서 입력값 input을 받는다
+        //5. 연산 결과를 담아줄 스트링 빌더를 선언해준다
 
-        //6. input 을 swtich문으로 나누어 메소드를 각각 push, pop, size, empty, front, back으로 빼주어 연산한다
+        //6. for 문을 spin만큼 돌면서 입력값 input을 받는다
+
+        //7. input 을 swtich문으로 나누어 메소드를 각각 push, pop, size, empty, front, back으로 빼주어 연산하며 연산의 결과를 빌더에 담아준다.
         //  push X: 정수 X를 큐에 넣는 연산이다.
         //  pop: 큐에서 가장 앞에 있는 정수를 빼고, 그 수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.
         //  size: 큐에 들어있는 정수의 개수를 출력한다.
         //  empty: 큐가 비어있으면 1, 아니면 0을 출력한다.
         //  front: 큐의 가장 앞에 있는 정수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.
         //  back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.
-        //1
+
+        //8. 연산의 결과를 프린트해준다.
+
+        //1.
         try {
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -52,27 +57,52 @@ public class Yunseop {
             ArrayList<String> queue = new ArrayList<String>();
 
             //5.
+            StringBuilder sb = new StringBuilder();
+
+            //6.
             for (int i = 0; i < spin; ++i) {
                 String input = reader.readLine();
 
+
+                //7.
                 if (input.startsWith("push")) {
                     queue.add(input.substring(5));
-                    System.out.println(input.substring(5));
                 } else if (input.equals("pop")) {
-                    System.out.println(queue.get(0));
-                    queue.remove(0);
+                    if (queue.isEmpty()){
+                        sb.append("-1" + "\n");
+                    } else {
+                        sb.append(queue.get(0)+"\n");
+                        queue.remove(0);
+                    }
+
                 } else if (input.equals("pop")) {
-                    System.out.println(queue.size());
+                    sb.append(queue.size()+"\n");
                 } else if (input.equals("empty")) {
                     if (queue.isEmpty()) {
-                        System.out.println("1");
+                        sb.append("1"+"\n");
                     } else {
-                        System.out.println("0");
+                        sb.append("0"+"\n");
                     }
                 } else if (input.equals("front")) {
-                    System.out.println();
+                    if (queue.isEmpty()) {
+                        sb.append("-1"+"\n");
+                    } else {
+                        sb.append(queue.get(0)+"\n");
+                    }
+                } else if (input.equals("back")) {
+                    if (queue.isEmpty()) {
+                        sb.append("-1"+"\n");
+                    } else {
+                        sb.append(queue.size()+"\n");
+                    }
+                } else if (input.equals("size")) {
+                    sb.append(queue.size()+"\n");
                 }
             }
+
+            //8.
+            System.out.println(sb);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
