@@ -11,25 +11,25 @@ public class JoonYoung {
 
 	public static void main(String[] args) throws Exception, IOException {
 
-		//ÀÔ·Â¹Ş±â
+		//ì…ë ¥ë°›ê¸°
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		//±æÀÌ ÀÔ·Â¹Ş±â
+		//ê¸¸ì´ ì…ë ¥ë°›ê¸°
 		int max = Integer.parseInt(br.readLine());
 		
-		//¸®½ºÆ® ¸¸µé±â
+		//ë¦¬ìŠ¤íŠ¸ ë§Œë“¤ê¸°
 		Queue<Integer> list = new LinkedList<>();
 		
-		//¸¶Áö¸·¿¡ ³ÖÀº °ª ¹Ş±â
+		//ë§ˆì§€ë§‰ì— ë„£ì€ ê°’ ë°›ê¸°
 		int addlist = 0;
         
-        //»±»±ÀÌ
+        //ëº‘ëº‘ì´
 		for (int i=0; i<max; i++) {
 			
-			//¸í·É¾î ÀÔ·Â¹Ş±â
+			//ëª…ë ¹ì–´ ì…ë ¥ë°›ê¸°
 			String input = br.readLine();
 			
-			//queue¿¡¼­ »©³»±â
+			//queueì—ì„œ ë¹¼ë‚´ê¸°
 			if (input.equals("pop")) {
 				
 				if (list.isEmpty()) {
@@ -39,12 +39,12 @@ public class JoonYoung {
 					System.out.println(list.poll());
 				}
 				
-			//list »çÀÌÁî
+			//list ì‚¬ì´ì¦ˆ
 			} else if (input.equals("size")) {
 				
 				System.out.println(list.size());
 			
-			//ºñ¾ú´Ï?
+			//ë¹„ì—ˆë‹ˆ?
 			} else if (input.equals("empty")) {
 				
 				if (list.isEmpty()) {
@@ -53,7 +53,8 @@ public class JoonYoung {
 					System.out.println(0);
 				}
 				
-			//list ¸Ç ¾ÕÀÇ °ª	
+				
+			//list ë§¨ ì•ì˜ ê°’	
 			} else if (input.equals("front")) {
 				
 				if (list.isEmpty()) {
@@ -62,7 +63,7 @@ public class JoonYoung {
 					System.out.println(list.peek());
 				}
 			
-			//¸¶Áö¸·¿¡ ³ÖÀº °ª
+			//ë§ˆì§€ë§‰ì— ë„£ì€ ê°’
 			} else if (input.equals("back")) {
 				
 				if (list.isEmpty()) {
@@ -71,7 +72,7 @@ public class JoonYoung {
 					System.out.println(addlist);
 				}
 			
-			//¹ŞÀº °ªÀ» splitÀ¸·Î Àß¶ó¼­ queue¿¡ ³Ö±â
+			//ë°›ì€ ê°’ì„ splitìœ¼ë¡œ ì˜ë¼ì„œ queueì— ë„£ê¸°
 			} else if (input.startsWith("push")) {
 							
 				String[] array = input.split("\\s");
