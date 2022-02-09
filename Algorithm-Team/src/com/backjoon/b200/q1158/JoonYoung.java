@@ -1,4 +1,4 @@
-package bababab;
+package com.backjoon.b200.q1158;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -6,35 +6,35 @@ import java.util.Queue;
 import java.util.Scanner;
 
 
-public class JoonYoung {
+public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
-		//½ºÄ³³Ê·Î ÀĞ¾îº¸ÀÚ
+		//ìŠ¤ìºë„ˆë¡œ ì½ì–´ë³´ì
 		Scanner scan = new Scanner(System.in);
 		
-		//nÇÏ±¸ k ÀÔ·Â¹Ş¾Æ¾ßÁö
+		//ní•˜êµ¬ k ì…ë ¥ë°›ì•„ì•¼ì§€
 		int n = scan.nextInt();
 		int k = scan.nextInt();
 		
-		//ÀÔ·Â°ªÀ» Àß¶ó¼­ ´õÇÏ±â À§ÇØ StringBuilder »ç¿ë
+		//ì…ë ¥ê°’ì„ ì˜ë¼ì„œ ë”í•˜ê¸° ìœ„í•´ StringBuilder ì‚¬ìš©
 		StringBuilder sb = new StringBuilder();
 		
-		//¸Ç ¾Õ¿¡ °ıÈ£
+		//ë§¨ ì•ì— ê´„í˜¸
 		sb.append("<");
 		
-		//»õ·Î¿î queue¸¦ »ı¼º ¼±ÀÔ¼±Ãâ·Î »©¾ßÇÏ´Ï±î
+		//ìƒˆë¡œìš´ queueë¥¼ ìƒì„± ì„ ì…ì„ ì¶œë¡œ ë¹¼ì•¼í•˜ë‹ˆê¹Œ
 		Queue<Integer> list = new LinkedList<>();
 		
-		//list¿¡ ¼ıÀÚ¸¦ ´ã¾Æº¸ÀÚ
+		//listì— ìˆ«ìë¥¼ ë‹´ì•„ë³´ì
 		for (int i=1; i<=n; i++) {
 			list.offer(i); 
 		}
 		
-		//À§Ä©°ªÀ» ¹Ş¾ÆÁÖ´Â index
+		//ìœ„ì¹«ê°’ì„ ë°›ì•„ì£¼ëŠ” index
 		int index = 0;
 		
-		//ÀÎµ¦½º °ªÀ» ÇÏ³ª¾¿ ´Ã¸®¸é¼­ »±»±ÀÌ ÀÔ·Â°ª k·Î ³ª´«°ªÀ» pollÇÏ¿© sb¿¡ ´ã±â
+		//ì¸ë±ìŠ¤ ê°’ì„ í•˜ë‚˜ì”© ëŠ˜ë¦¬ë©´ì„œ ëº‘ëº‘ì´ ì…ë ¥ê°’ kë¡œ ë‚˜ëˆˆê°’ì„ pollí•˜ì—¬ sbì— ë‹´ê¸°
 		while(!list.isEmpty()) {
 			
 			index++;
@@ -44,13 +44,13 @@ public class JoonYoung {
 			else list.offer(list.poll()); 
 		}
 		
-		//¸¶Áö¸· ÁÙ append , Á¦°Å
+		//ë§ˆì§€ë§‰ ì¤„ append , ì œê±°
 		sb.delete(sb.length()-2, sb.length());
 		
-		//´İ¾ÆÁÖ±â
+		//ë‹«ì•„ì£¼ê¸°
 		sb.append(">");
 		
-		//°á°ú Ãâ·Â
+		//ê²°ê³¼ ì¶œë ¥
 		System.out.println(sb.toString());
 	}
 
