@@ -80,5 +80,6 @@ public class YouMe {
 		for(char letter : stack) {
 			queue.add(letter);
 		}
+		queue.add(' ');
 	}
 }
