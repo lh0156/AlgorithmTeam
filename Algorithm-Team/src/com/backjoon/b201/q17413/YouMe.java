@@ -1,7 +1,6 @@
 package com.backjoon.b201.q17413;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -52,34 +51,39 @@ public class YouMe {
 			
 			if(letter == '<') {
 				isTag = true;
+				getResult();
 			}
 			
 			if(isTag) {
 				queue.add(letter);
 			} else if(letter == ' ') {
-				reverse();
+				getResult();
+				queue.add(' ');
 			} else {
 				stack.push(letter);
 			}
 			
+			if (i == input.length() - 1) {
+				getResult();
+			}
+			
 			if(letter == '>') {
 				isTag = false;
+				getResult();
 			}
 		}
-		
-		getResult();
 	}
 
 	private static void getResult() {
-		for(char letter : queue) {
-			System.out.print(letter);
+		reverse();
+		while(!queue.isEmpty()) {
+			System.out.print(queue.poll());
 		}
 	}
 
 	private static void reverse() {
-		for(char letter : stack) {
-			queue.add(letter);
+		while(!stack.isEmpty()) {
+			queue.add(stack.pop());
 		}
-		queue.add(' ');
 	}
 }
