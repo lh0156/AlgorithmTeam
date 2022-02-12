@@ -28,13 +28,16 @@ public class YouMe {
 		String input = reader.readLine();
 		
 		for(int i=0; i<input.length(); i++) {
-			char edge = input.charAt(i);
-			
-			if(edge == '(') {
-				stack.push(edge);
+			if(input.charAt(i) == '(') {
+				stack.push('(');
 			} else {
 				stack.pop();
-				peace += stack.size();
+				
+				if(input.charAt(i-1) == '(') {
+					peace += stack.size();
+				} else {
+					peace++;
+				}
 			}
 		}
 		
