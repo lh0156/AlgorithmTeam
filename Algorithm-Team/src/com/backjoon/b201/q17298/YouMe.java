@@ -38,7 +38,7 @@ public class YouMe {
 		for(int i=0; i<size; i++) {
 			boolean flag = false;
 			
-			for(int j=i; j<size-i-1; j++) {
+			for(int j=i+1; j<size; j++) {
 				if(list.get(i) < list.get(j)) {
 					System.out.print(list.get(j) + " ");
 					flag = true;
