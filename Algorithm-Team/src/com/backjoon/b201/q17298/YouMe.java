@@ -42,6 +42,7 @@ public class YouMe {
 				if(list.get(i) < list.get(j)) {
 					System.out.print(list.get(j) + " ");
 					flag = true;
+					break;
 				}
 			}
 			
