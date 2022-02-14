@@ -31,6 +31,7 @@ public class YouMe {
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder builder = new StringBuilder();
 		HashMap<String, Integer> map = new HashMap<>();
 		
 		int size = Integer.parseInt(reader.readLine());
@@ -50,13 +51,15 @@ public class YouMe {
 			for(int j=i; j<size; j++) {
 				if(map.get(term[j]) > map.get(term[i]) && !flag) {
 					flag = true;
-					System.out.print(term[j] + " ");
+					builder.append(term[j] + " ");
 				}
 			}
 			
 			if(!flag) {
-				System.out.print(-1 + " ");
+				builder.append(-1 + " ");
 			}
 		}
+		
+		System.out.println(builder);
 	}
 }
