@@ -23,9 +23,11 @@ public class ChanWoo {
 	        int len = prefix.length();
 	        
 	        for(int i = 0; i < len; i++) {
+	        	//대문자에 대응하는 수인 65 ~ 90 로 A ~ Z 인지를 검사
 	            if('A' <= prefix.charAt(i) && prefix.charAt(i) <= 'Z') {  // operand
 	                double d = arr[prefix.charAt(i) - 'A'];
 	                operand.push(d);
+	            //대문자 알파벳이 아니라면 사칙연산이라는 뜻이므로 연산
 	            }else {  // operator
 	            	//스택에 집어넣은 수를 2개씩 빼면서 연산
 	            	//연산이 끝난수는 다시 스택에 집어넣고 다음수와 같이 연산
