@@ -1,7 +1,6 @@
 package com.backjoon.b203.q10808;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
@@ -29,7 +28,7 @@ public class YouMe {
 		for(int i=0; i<input.length(); i++) {
 			char index = input.charAt(i);
 			if(map.containsKey(index)) {
-				map.put(index, map.get(index));
+				map.put(index, map.get(index) + 1);
 			} else {
 				map.put(index, 1);
 			}
