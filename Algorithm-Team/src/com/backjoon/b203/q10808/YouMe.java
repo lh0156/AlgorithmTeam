@@ -34,7 +34,7 @@ public class YouMe {
 			}
 		}
 		
-		for(char i='a'; i<'z'; i++) {
+		for(char i='a'; i<='z'; i++) {
 			if(map.containsKey(i)) {
 				System.out.print(map.get(i) + " ");
 			} else {
