@@ -29,9 +29,10 @@ public class YouMe {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		String input = "";
 		
-		for(int i=0; i<100; i++) {
-			countEachCase(reader.readLine());
+		while((input = reader.readLine()) != null) {
+			countEachCase(input);
 		}
 	}
 
@@ -55,6 +56,6 @@ public class YouMe {
 			}
 		}
 		
-		System.out.printf("%d %d %d %d", lowerCase, upperCase, num, blank);
+		System.out.printf("%d %d %d %d%n", lowerCase, upperCase, num, blank);
 	}
 }
