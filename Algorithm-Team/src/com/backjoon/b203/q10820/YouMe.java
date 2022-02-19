@@ -32,7 +32,7 @@ public class YouMe {
 		String input = "";
 		
 		while((input = reader.readLine()) != null) {
-			countEachCase(input);
+			countEachCase(input); 
 		}
 	}
 
