@@ -30,10 +30,9 @@ public class YouMe {
 	public static void main(String[] args) throws Exception {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
-		while(true) {
+		for(int i=0; i<100; i++) {
 			countEachCase(reader.readLine());
 		}
-		
 	}
 
 	private static void countEachCase(String input) {
