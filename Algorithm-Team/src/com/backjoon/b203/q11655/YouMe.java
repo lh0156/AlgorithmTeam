@@ -1,8 +1,8 @@
 package com.backjoon.b203.q11655;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.regex.Pattern;
 
 public class YouMe {
 	/*
@@ -23,20 +23,24 @@ public class YouMe {
 		String input = reader.readLine();
 		
 		for(int i=0; i<input.length(); i++) {
-			char letter = input.charAt(i);
-			if((letter >= 'a' && letter <= 'z')
-					|| (letter >= 'A' && letter <= 'Z')) {
-				char result = (char)(letter + 13);
-				
-				if((result < 'a' && result > 'Z') || result > 'z') {
-					result -= 26;
-					System.out.print((char)result);
-				} else {
-					System.out.print((char)(letter + 13));
-				}
+			char code = encrypt(input.charAt(i));
+			System.out.print(code);
+		}
+	}
+
+	private static char encrypt(char letter) {
+		String pattern = "^[a-zA-Z]*$";
+		
+		if(Pattern.matches(pattern, letter + "")) {
+			char code = (char)(letter + 16);
+			
+			if(!Pattern.matches(pattern, code + "")) {
+				return code -= 26;
 			} else {
-				System.out.print(letter);
+				return (char)(letter + 13);
 			}
+		} else {
+			return letter;
 		}
 	}
 }
