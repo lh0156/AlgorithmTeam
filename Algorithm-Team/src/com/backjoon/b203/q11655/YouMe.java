@@ -35,12 +35,10 @@ public class YouMe {
 			char code = (char)(letter + 13);
 			
 			if(!Pattern.matches(pattern, code + "")) {
-				return code -= 26;
-			} else {
-				return (char)(letter + 13);
+				return (char)(code - 26);
 			}
+			return code;
 		}
-		
 		return letter;
 	}
 }
