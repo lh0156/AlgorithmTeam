@@ -32,15 +32,15 @@ public class YouMe {
 		String pattern = "^[a-zA-Z]*$";
 		
 		if(Pattern.matches(pattern, letter + "")) {
-			char code = (char)(letter + 16);
+			char code = (char)(letter + 13);
 			
 			if(!Pattern.matches(pattern, code + "")) {
 				return code -= 26;
 			} else {
 				return (char)(letter + 13);
 			}
-		} else {
-			return letter;
 		}
+		
+		return letter;
 	}
 }
