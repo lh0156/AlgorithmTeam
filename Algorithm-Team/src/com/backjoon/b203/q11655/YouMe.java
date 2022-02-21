@@ -26,7 +26,14 @@ public class YouMe {
 			char letter = input.charAt(i);
 			if((letter >= 'a' && letter <= 'z')
 					|| (letter >= 'A' && letter <= 'Z')) {
-				System.out.print((char)(letter + 13));
+				char result = (char)(letter + 13);
+				
+				if((result < 'a' && result > 'Z') || result > 'z') {
+					result -= 26;
+					System.out.print((char)result);
+				} else {
+					System.out.print((char)(letter + 13));
+				}
 			} else {
 				System.out.print(letter);
 			}
