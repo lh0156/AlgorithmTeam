@@ -17,8 +17,8 @@ public class YouMe {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String[] num = reader.readLine().split(" ");
 		
-		int sum = Integer.parseInt(num[0] + num[1])
-					+ Integer.parseInt(num[2] + num[3]);
+		long sum = Long.parseLong(num[0] + num[1])
+					+ Long.parseLong(num[2] + num[3]);
 		
 		System.out.println(sum);
 	}
