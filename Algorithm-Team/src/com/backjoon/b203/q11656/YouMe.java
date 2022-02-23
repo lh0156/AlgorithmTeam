@@ -37,7 +37,7 @@ public class YouMe {
 		list = new ArrayList<>(input.length());
 		
 		for(int i=0; i<input.length(); i++) {
-			suffix[i] = input.substring(0, i+1);
+			suffix[i] = input.substring(i);
 			setSeq(suffix[i]);
 		}
 		
@@ -47,9 +47,15 @@ public class YouMe {
 	}
 
 	private static void setSeq(String suffix) {
+		if(list.size() == 0) {
+			list.add(suffix);
+			return;
+		}
+		
 		for(int i=0; i<list.size(); i++) {
 			if(suffix.charAt(index) < list.get(i).charAt(index)) {
-				if(suffix.charAt(index) > list.get(i-1).charAt(index)) {
+				if(suffix.charAt(index) > list.get(i-1).charAt(index)
+						&& list.size() == 1) {
 					list.add(0, suffix);
 					index = 0;
 					return;
