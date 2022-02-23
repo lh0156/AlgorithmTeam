@@ -38,6 +38,7 @@ public class YouMe {
 		
 		for(int i=0; i<input.length(); i++) {
 			suffix[i] = input.substring(i);
+			System.out.println("suffix: " + suffix[i]);
 			setSeq(suffix[i]);
 		}
 		
@@ -47,24 +48,32 @@ public class YouMe {
 	}
 
 	private static void setSeq(String suffix) {
-		if(list.size() == 0) {
+		if(list.isEmpty()) {
 			list.add(suffix);
+			System.out.println(list.get(0));
 			return;
 		}
 		
 		for(int i=0; i<list.size(); i++) {
-			if(suffix.charAt(index) < list.get(i).charAt(index)) {
-				if(suffix.charAt(index) > list.get(i-1).charAt(index)
-						&& list.size() == 1) {
-					list.add(0, suffix);
+			if(list.size() == 1) {
+				if(suffix.charAt(index) < list.get(i).charAt(index)){
+					list.add(i, suffix);
+					System.out.println(list.get(i) + ", " + i);
 					index = 0;
 					return;
-					
-				} else {
-					index++;
-					setSeq(suffix);
+				}
+			} else {
+				if(suffix.charAt(index) < list.get(i).charAt(index)
+						|| suffix.charAt(index) > list.get(i-1).charAt(index)) {
+					list.add(i, suffix);
+					System.out.println(list.get(i) + ", " + i);
+					index = 0;
+					return;
 				}
 			}
+				
+			index++;
+			setSeq(suffix);
 		}
 	}
 }
