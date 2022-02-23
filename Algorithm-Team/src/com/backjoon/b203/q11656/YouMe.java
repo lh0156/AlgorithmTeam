@@ -7,7 +7,6 @@ import java.util.Arrays;
 public class YouMe {
 	/*
 		문자열의 모든 접미사를 사전순으로 정렬한 다음 출력하는 프로그램
-		- ArrayList, 재귀함수 사용
 		
 		설계>
 		1. BufferedReader, suffix 배열 생성함. 
