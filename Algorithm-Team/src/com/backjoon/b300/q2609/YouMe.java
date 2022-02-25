@@ -1,7 +1,6 @@
 package com.backjoon.b300.q2609;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
