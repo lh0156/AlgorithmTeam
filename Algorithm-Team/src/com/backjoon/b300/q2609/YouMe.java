@@ -3,6 +3,7 @@ package com.backjoon.b300.q2609;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class YouMe {
 	/*
@@ -21,23 +22,21 @@ public class YouMe {
 		6. lcm = gcd * num[0]/gcd * num[0]/gcd
 		7. gcd와 lcm 출력 
 	 */
-	public static void main(String[] args) throws Exception {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		String[] input = reader.readLine().split(" ");
-		int[] num = Arrays.stream(input).mapToInt(Integer::parseInt).toArray();
-		Arrays.sort(num);
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int a = scan.nextInt();
+		int b = scan.nextInt();
 		
 		int gcd = 0;
 		int lcm = 0;
 		
-		for(int i=1; i<=num[0]; i++) {
-			if(num[0] % i == 0 
-					&& num[1] % i == 0) {
+		for(int i=1; i<=Math.min(a, b); i++) {
+			if(a % i == 0 && b % i == 0) {
 				gcd = i;
 			}
 		}
-		lcm = num[0] * num[1] / gcd;
+		lcm = a * b / gcd;
 		
-		System.out.printf("%d%n%d", gcd, lcm);
+		System.out.printf("%d\n%d", gcd, lcm);
 	}
 }
