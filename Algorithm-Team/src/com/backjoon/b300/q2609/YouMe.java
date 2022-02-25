@@ -1,8 +1,5 @@
 package com.backjoon.b300.q2609;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class YouMe {
@@ -37,6 +34,6 @@ public class YouMe {
 		}
 		lcm = a * b / gcd;
 		
-		System.out.printf("%d\n%d", gcd, lcm);
+		System.out.printf("%d%n%d", gcd, lcm);
 	}
 }
