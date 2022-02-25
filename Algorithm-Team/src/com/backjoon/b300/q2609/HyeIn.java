@@ -11,18 +11,16 @@ public class HyeIn {
 		int num1 = scan.nextInt();
 		int num2 = scan.nextInt();
 		
-		System.out.println(num1);
-		System.out.println(num2);
-		
-		double smallNum = num1 >= num2 ? num2 : num1;
+		int smallNum = num1 >= num2 ? num2 : num1;
 		
 		int commonDivisor = 1;
 		int commonMultiple = 1;
 		
-		for(int i=2; i<=smallNum; i++) {
+		for(int i=smallNum; i > 1; i--) {
 			
 			if(num1 % i == 0 && num2 % i == 0) {
 				commonDivisor = i;
+				break;
 			}
 		}
 		
