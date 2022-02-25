@@ -36,7 +36,7 @@ public class YouMe {
 				gcd = i;
 			}
 		}
-		lcm = gcd * (num[0]/gcd) * (num[1]/gcd);
+		lcm = num[0] * num[1] / gcd;
 		
 		System.out.printf("%d%n%d", gcd, lcm);
 	}
