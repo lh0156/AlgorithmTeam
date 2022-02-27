@@ -1,7 +1,6 @@
 package com.backjoon.b300.q1978;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class YouMe {
 	/*
@@ -25,13 +24,12 @@ public class YouMe {
 		7. primeNum 출력함.
 	 */
 	public static void main(String[] args) throws Exception {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		int testCase = Integer.parseInt(reader.readLine());
-		String[] input = reader.readLine().split(" ");
+		Scanner scan = new Scanner(System.in);
+		int testCase = scan.nextInt();
 		int primeNum = 0;
 		
 		for(int i=0; i<testCase; i++) {
-			if(isPrimeNum(Integer.parseInt(input[i]))) {
+			if(isPrimeNum(scan.nextInt())) {
 				primeNum++;
 			}
 		}
