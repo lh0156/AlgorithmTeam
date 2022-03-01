@@ -29,9 +29,15 @@ public class YouMe {
 					> false를 리턴함.
 			> true 리턴함.
 	 */
+	private static StringBuilder builder;
+	private static BufferedReader reader;
+	
+	static {
+		builder = new StringBuilder();
+		reader = new BufferedReader(new InputStreamReader(System.in));
+	}
+	
 	public static void main(String[] args) throws Exception {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		
 		while(true) {
 			int input = Integer.parseInt(reader.readLine());
 			
@@ -41,19 +47,19 @@ public class YouMe {
 				verify(input);
 			}
 		}
+		System.out.println(builder);
 	}
 
 	private static void verify(int num) {
 		for(int i=2; i<=num/2; i++) {
 			if(isPrimeNum(i)) {
 				if(isPrimeNum(num-i)){
-					System.out.printf("%d = %d + %d%n", num, i, (num-i));
+					builder.append(num).append(" = ").append(i).append(" + ").append(num-i).append("\r\n");
 					return;
 				}
 			}
 		}
-		
-		System.out.println("Goldbach's conjecture is wrong.");
+		builder.append("Goldbach's conjecture is wrong.").append("\r\n");
 	}
 
 	private static boolean isPrimeNum(int num) {
