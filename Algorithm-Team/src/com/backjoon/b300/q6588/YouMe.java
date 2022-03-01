@@ -1,6 +1,7 @@
 package com.backjoon.b300.q6588;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class YouMe {
 	/*
@@ -28,25 +29,27 @@ public class YouMe {
 					> false를 리턴함.
 			> true 리턴함.
 	 */
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
+	public static void main(String[] args) throws Exception {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		
 		while(true) {
-			int input = scan.nextInt();
+			int input = Integer.parseInt(reader.readLine());
+			
 			if(input == 0) {
 				break;
 			} else {
 				verify(input);
 			}
 		}
-		
 	}
 
 	private static void verify(int num) {
-		for(int i=2; i<num/2; i++) {
-			if(isPrimeNum(i) && isPrimeNum(num-i)) {
-				System.out.printf("%d = %d + %d%n", num, i, (num-i));
-				return;
+		for(int i=2; i<=num/2; i++) {
+			if(isPrimeNum(i)) {
+				if(isPrimeNum(num-i)){
+					System.out.printf("%d = %d + %d%n", num, i, (num-i));
+					return;
+				}
 			}
 		}
 		
