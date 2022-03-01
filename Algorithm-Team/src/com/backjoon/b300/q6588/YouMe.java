@@ -42,24 +42,24 @@ public class YouMe {
 			int input = Integer.parseInt(reader.readLine());
 			
 			if(input == 0) {
+				System.out.println(builder);
 				break;
 			} else {
 				verify(input);
 			}
 		}
-		System.out.println(builder);
 	}
 
 	private static void verify(int num) {
 		for(int i=2; i<=num/2; i++) {
 			if(isPrimeNum(i)) {
 				if(isPrimeNum(num-i)){
-					builder.append(num).append(" = ").append(i).append(" + ").append(num-i).append("\r\n");
+					builder.append(num + " = " + i + " + " + (num-i)).append("\n");
 					return;
 				}
 			}
 		}
-		builder.append("Goldbach's conjecture is wrong.").append("\r\n");
+		builder.append("Goldbach's conjecture is wrong.").append("\n");
 	}
 
 	private static boolean isPrimeNum(int num) {
