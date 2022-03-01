@@ -51,7 +51,7 @@ public class YouMe {
 	}
 
 	private static void verify(int num) {
-		for(int i=2; i<=num/2; i++) {
+		for(int i=3; i<=num/2; i++) {
 			if(isPrimeNum(i)) {
 				if(isPrimeNum(num-i)){
 					builder.append(num + " = " + i + " + " + (num-i)).append("\n");
@@ -63,10 +63,6 @@ public class YouMe {
 	}
 
 	private static boolean isPrimeNum(int num) {
-		if(num == 2) {
-			return true;
-		} 
-
 		for(int i=2; i<=Math.sqrt(num); i++) {
 			if(num % i == 0) {
 				return false;
