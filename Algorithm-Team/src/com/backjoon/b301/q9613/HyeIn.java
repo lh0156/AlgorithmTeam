@@ -23,6 +23,8 @@ public class HyeIn {
 			
 			int n = scan.nextInt();
 			int[] nums = new int[n];
+			
+			//첨에 int 선언했다가 틀림. 100C2 X 1,000,000 > 21억 
 			long gcdSum = 0;
 			
 			for(int i=0; i<n; i++) {
@@ -31,7 +33,7 @@ public class HyeIn {
 			
 			for(int i=0; i<n-1; i++) {
 				for(int j=i+1; j<n; j++) {
-					gcdSum += getGcd(nums[i], nums[j]);
+					gcdSum += getGcd2(nums[i], nums[j]);
 				}
 			}
 			
@@ -53,5 +55,10 @@ public class HyeIn {
 		}
 		
 		return gcd;
+	}
+	
+	private static int getGcd2(int num1, int num2) {
+		if(num2==0) return num1;
+		return getGcd2(num2,num1%num2);
 	}
 }
