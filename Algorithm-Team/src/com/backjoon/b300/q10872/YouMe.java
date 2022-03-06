@@ -21,10 +21,8 @@ public class YouMe {
 		int num = Integer.parseInt(reader.readLine());
 		int factorial = 1;
 		
-		if(num != 0) {
-			for(int i=num; i>0; i--) {
-				factorial *= i;
-			}
+		for(int i=num; i>0; i--) {
+			factorial *= i;
 		}
 		
 		System.out.println(factorial);
