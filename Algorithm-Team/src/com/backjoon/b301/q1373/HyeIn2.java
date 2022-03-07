@@ -6,6 +6,7 @@ public class HyeIn2 {
 
 	public static void main(String[] args) {
 		
+		//커밋메시지 바꾸고 싶다.
 		Scanner scan = new Scanner(System.in);
 		
 		String num = scan.next();
