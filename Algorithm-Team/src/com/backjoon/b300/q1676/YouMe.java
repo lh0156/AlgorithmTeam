@@ -1,7 +1,6 @@
 package com.backjoon.b300.q1676;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class YouMe {
@@ -25,6 +24,17 @@ public class YouMe {
 			factorial *= i;
 		}
 		
-		System.out.println((factorial + "").length() - (factorial + "").indexOf("0"));
+		int length = (int)(Math.log10(factorial));
+		int result = 0;
+		
+		for(int i=length; i>0; i--) {
+			if((factorial + "").charAt(i) == '0') {
+				result++;
+			} else {
+				break;
+			}
+		}
+		
+		System.out.println(result);
 	}
 }
