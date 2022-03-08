@@ -14,7 +14,7 @@ public class YouMe {
 		3. while문 num이 5보다 클 때
 			> cnt에 num을 5로 나눈 값 저장
 			> num을 5로 나눔.
-	 	4. cnt 출력 
+	 	4. cnt 출력  
 	 */
 	public static void main(String[] args) throws Exception {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
