@@ -16,12 +16,21 @@ public class HyeIn {
 		for(int i=0; i<num.length(); i++) {
 			result.append(binary[num.charAt(i) - '0']);
 		}
+				
+		System.out.println(result.substring(cutZero(result)));
+	}
+
+	private static int cutZero(StringBuilder result) {
 		
 		int index = 0;
-		while(result.charAt(index) == '0') {
+		while(index < result.length() && result.charAt(index) == '0') {
 			index++;
 		}
+
+		if(index >= result.length()) {
+			index--;
+		}
 		
-		System.out.println(result.substring(index));
+		return index;
 	}
 }
