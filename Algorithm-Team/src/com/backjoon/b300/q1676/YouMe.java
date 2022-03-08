@@ -6,35 +6,26 @@ import java.io.InputStreamReader;
 public class YouMe {
 	/*
 		N!에서 뒤에서 처음 0이 아닌 숫자가 나올 때까지 0의 개수 구하는 프로그램
-		-> indexOf 사용
+		- 2 * 5 = 10
 		
 		설계>
 		1. Buffered Reader 생성
-		2. 입력 값을 num에 초기화 후, factorial 변수에 1 저장
-		3. for문 num 역반복
-			> factorial에 i 값 곱하기
-	 	4. factorial의 길이 - factorial에서 0이 나온 index를 출력함. 
+		2. 입력 값을 num에 초기화 후, cnt 변수에 0 저장
+		3. while문 num이 5보다 클 때
+			> cnt에 num을 5로 나눈 값 저장
+			> num을 5로 나눔.
+	 	4. cnt 출력 
 	 */
 	public static void main(String[] args) throws Exception {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int num = Integer.parseInt(reader.readLine());
-		int factorial = 1;
+		int cnt = 0;
 		
-		for(int i=num; i>0; i--) {
-			factorial *= i;
+		while(num >= 5) {
+			cnt += num / 5;
+			num /= 5;
 		}
 		
-		int length = (int)(Math.log10(factorial));
-		int result = 0;
-		
-		for(int i=length; i>0; i--) {
-			if((factorial + "").charAt(i) == '0') {
-				result++;
-			} else {
-				break;
-			}
-		}
-		
-		System.out.println(result);
+		System.out.println(cnt);
 	}
 }
