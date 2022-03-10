@@ -1,7 +1,5 @@
 package com.backjoon.b301.q9613;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class YouMe {
@@ -43,8 +41,8 @@ public class YouMe {
 		
 	}
 
-	private static int getSumGcd(int[] nums) {
-		int sum = 0;
+	private static long getSumGcd(int[] nums) {
+		long sum = 0;
 		for(int i=0; i<nums.length-1; i++) {
 			for(int j=i+1; j<nums.length; j++) {
 				sum += getGcd(nums[i], nums[j]);
