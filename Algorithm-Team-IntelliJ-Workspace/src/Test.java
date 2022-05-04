@@ -1,26 +1,22 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Stack;
+
+
+    /*
+
+
+    * */
 
 public class Test {
     public static void main(String[] args) throws Exception{
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        Long count_10 = Long.parseLong(reader.readLine());
+        String temp = reader.readLine();
+        Stack<Character> stk = new Stack<Character>();
 
-        ArrayList<Long> count_2 = new ArrayList<>();
+        for(int i=0; i<temp.length(); ++i) {
 
-        while(count_10>0) {
-            count_2.add(count_10%2);
-            count_10 /= 2;
         }
-
-        Collections.reverse(count_2);
-
-        for (Long answer : count_2) {
-            System.out.print(answer);
-        }
-
     }
 }
 
